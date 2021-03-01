@@ -154,10 +154,13 @@ class Client {
         return this.nom + ", " + this.prenom + ", " + this.numTel + ", " + this.adresseCourriel ; 
     }
 }
+class Taille { 
+    //test
+}
 
     // Code pour tester la classe Aliment : 
     Aliment1 = new Aliment ('Aliment1' ,'45') ; 
-    //console.log(Aliment1);
+    console.log(Aliment1);
 
     //Tester classe Croute 
     croute1 = new Croute ('brule' ,60 ,'calcine', 1020, 'G') ;
@@ -198,7 +201,7 @@ class Client {
         client1 = new Client ('Mahdi' , 'Hmissi', '3502504567', 'ghth@.com') ; 
         console.log(client1);
 
-       //console.log(client1.informationClient()); 
+       console.log(client1.informationClient()); 
 
     
 
