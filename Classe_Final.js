@@ -155,7 +155,9 @@ class Client {
     }
 }
 class Taille { 
-    //test
+    constructor(nom, diametre, facteur)
+     
+
 }
 
     // Code pour tester la classe Aliment : 
