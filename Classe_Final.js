@@ -19,8 +19,20 @@ class Croute extends Aliment{
     } 
 
     prixCroute(){
-        return (this.taille * this.prix);  
-    }
+        if(this.taille == 'P') {
+            this.taille = 1 
+        }
+        else if (this.taille == 'M') 
+                this.taille = 2 ;
+        else if(this.taille == 'G') 
+                this.taille = 3 
+        else
+            console.log("erreur")        
+
+        return(this.taille * this.prix);              
+    } 
+        
+        
 
 
 }
@@ -30,7 +42,7 @@ class Fromage extends Aliment{
     super(nom, poids);
     this.prixFromage = prixFromage;  
     }
-    prixFromage(){ 
+    calculPrixFromage(){ 
         return (this.poids * this.prixFromage );
     }
 } 
@@ -40,15 +52,17 @@ class Garniture extends Aliment{
         this.prixGarniture = prixGarniture;  
         }
         informationGarniture(){
-            return this.nom + ", " + this.poids + ", " + this.garniture + ", " + this.prixGarniture ;
+            return this.nom + ", " + this.poids + ", " + this.prixGarniture ;
         }
-        prixGarniture(){
+        calculPrixGarniture(){
             return (this.poids * this.prixGarniture); 
             
         }
 } 
-class Epices extends Epices {
-        super(nom, poids);
+class Epices extends Aliment {
+        super(nom, poids){
+            
+        }
 }
 
 class Pizza {
@@ -106,11 +120,9 @@ class Pizza {
         this.fromages(this.fromages.length) = fromage; 
     }
 
-    calculPrixComplet(prixComplet){
-        (( this.garniture + this.fromage + this.croute ) * this.taille) = prixComplet;    
-    }
-
-
+    for (let index = 0; index < fromage.lengtfromagedex++) {
+        fromage element = array[index];
+        fromage
 
 
 }
@@ -129,13 +141,13 @@ class Commande extends Pizza{
     }
 }
 
-class Client {
+class Client extends Pizza {
     constructor(nom, prenom, numTel, adresseCourriel){
-        super(commande)
+        super(Commande)
         this.nom= nom ; 
         this.prenom = prenom; 
         this.numTel = numTel; 
-        this.adresseCourriel =adresseCourriel;  
+        this.adresseCourriel = adresseCourriel;  
         
     }
     informationClient(){
@@ -143,3 +155,37 @@ class Client {
     }
 }
 
+    // Code pour tester la classe Aliment : 
+    //Aliment1 = new Aliment ('Aliment1' ,'45') ; 
+    //console.log(Aliment1);
+
+    //Tester classe Croute 
+    //croute1 = new Croute ('brule' ,60 ,'calcine', 1020, 'G') ;
+    //console.log(croute1); 
+    
+    //console.log(croute1.prixCroute());  
+
+
+    //Tester classe fromage  
+
+    //fromage1 = new Fromage ('Fromage' ,50 ,5); 
+    //console.log(fromage1);
+     
+    //console.log(fromage1.calculPrixFromage()); 
+
+    //Tester classe garniture 
+    
+        //garniture1 = new Garniture ('tomate', 45, 0.70); 
+        //console.log(garniture1); 
+        //console.log(garniture1.informationGarniture()) ;   
+
+        //console.log(garniture1.calculPrixGarniture()); 
+
+    // pas de test pour epices 
+
+    // Test pizza  
+
+        pizza1 = new Pizza ('troisFromages', 'M', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', 50, 8); 
+        console.log(pizza1);   
+
+    //     
