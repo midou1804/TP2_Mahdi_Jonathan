@@ -66,7 +66,7 @@ class Epices extends Aliment {
 }
 
 class Pizza {
-    constructor(numeroPizza, taille, croute, fromage, garniture,prixComplet, tempsCuisson ){
+    constructor(numeroPizza, taille, croute, fromage, garniture,prixComplet, tempsCuisson){
     this.prixComplet = prixComplet ; 
     this.tempsCuisson = tempsCuisson ; 
     this.numeroPizza = numeroPizza; 
@@ -120,30 +120,30 @@ class Pizza {
         this.fromages(this.fromages.length) = fromage; 
     }
 
-    for (let index = 0; index < fromage.lengtfromagedex++) {
-        fromage element = array[index];
-        fromage
+    //for (let index = 0; index < fromage.lengtfromagedex++) {
+      //  fromage element = array[index];
+    //    fromage
 
 
 }
 
-class Commande extends Pizza{ 
-    constructor(numCommande, dateCommande, heureCommande){
-    super(this.numeroPizza, prixComplet)
-    this.numCommande = numCommande ; 
-    this.dateCommande = dateCommande ; 
-    this.heureCommande = heureCommande ; 
-
+class Commande{ 
+    constructor(numCommande, dateCommande, heureCommande,listepizzas ,prixComplet){
+        
+        this.numCommande = numCommande ; 
+        this.dateCommande = dateCommande ; 
+        this.heureCommande = heureCommande ; 
+        this.listepizzas = listepizzas; // NOTE !! : Liste à créer !! 
+        this.prixComplet = prixComplet; 
     
     }
     informationCommande(){
-        return this.numCommande + ", " + this.dateCommande + ", " + this.heureCommande + ", " + this.nom ; 
+        return this.numCommande + ", " + this.dateCommande + ", " + this.heureCommande + ", " + this.listepizzas+ ", " + this.prixComplet; 
     }
 }
 
-class Client extends Pizza {
+class Client {
     constructor(nom, prenom, numTel, adresseCourriel){
-        super(Commande)
         this.nom= nom ; 
         this.prenom = prenom; 
         this.numTel = numTel; 
@@ -151,41 +151,57 @@ class Client extends Pizza {
         
     }
     informationClient(){
-        return this.nom + ", " + prenom + ", " + numTel + ", " + this.adresseCourriel
+        return this.nom + ", " + this.prenom + ", " + this.numTel + ", " + this.adresseCourriel ; 
     }
 }
 
     // Code pour tester la classe Aliment : 
-    //Aliment1 = new Aliment ('Aliment1' ,'45') ; 
+    Aliment1 = new Aliment ('Aliment1' ,'45') ; 
     //console.log(Aliment1);
 
     //Tester classe Croute 
-    //croute1 = new Croute ('brule' ,60 ,'calcine', 1020, 'G') ;
-    //console.log(croute1); 
+    croute1 = new Croute ('brule' ,60 ,'calcine', 1020, 'G') ;
+    console.log(croute1); 
     
-    //console.log(croute1.prixCroute());  
+    console.log(croute1.prixCroute());  
 
 
     //Tester classe fromage  
 
-    //fromage1 = new Fromage ('Fromage' ,50 ,5); 
-    //console.log(fromage1);
+    fromage1 = new Fromage ('Fromage' ,50 ,5); 
+    console.log(fromage1);
      
-    //console.log(fromage1.calculPrixFromage()); 
+    console.log(fromage1.calculPrixFromage()); 
 
     //Tester classe garniture 
     
-        //garniture1 = new Garniture ('tomate', 45, 0.70); 
-        //console.log(garniture1); 
-        //console.log(garniture1.informationGarniture()) ;   
+        garniture1 = new Garniture ('tomate', 45, 0.70); 
+        console.log(garniture1); 
+        console.log(garniture1.informationGarniture()) ;   
 
-        //console.log(garniture1.calculPrixGarniture()); 
+        console.log(garniture1.calculPrixGarniture()); 
 
     // pas de test pour epices 
 
     // Test pizza  
-
-        pizza1 = new Pizza ('troisFromages', 'M', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', 50, 8); 
+        pizza1 = new Pizza ('4504', 'M', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', 50, 8); 
         console.log(pizza1);   
+ 
+    //Test de la classe commande  
 
-    //     
+    commande1 = new Commande (2345 ,2021-12-30 , "20:34", 'troisfromages', 40 ) ;  
+    console.log(commande1); 
+
+    console.log(commande1.informationCommande()) ;
+    
+    //Test de la classe client  
+        client1 = new Client ('Mahdi' , 'Hmissi', '3502504567', 'ghth@.com') ; 
+        console.log(client1);
+
+       //console.log(client1.informationClient()); 
+
+    
+
+
+
+
