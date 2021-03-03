@@ -20,7 +20,7 @@ class Croute extends Aliment{
 
     prixCroute(){
         if(this.taille == 'P') {
-            this.taille = 1 
+            this.taille = 1
         }
         else if (this.taille == 'M') 
                 this.taille = 2 ;
@@ -144,7 +144,7 @@ class Commande{
 
 class Client {
     constructor(nom, prenom, numTel, adresseCourriel){
-        this.nom= nom ; 
+        this.nom = nom ; 
         this.prenom = prenom; 
         this.numTel = numTel; 
         this.adresseCourriel = adresseCourriel;  
@@ -154,9 +154,34 @@ class Client {
         return this.nom + ", " + this.prenom + ", " + this.numTel + ", " + this.adresseCourriel ; 
     }
 }
-class Taille { 
-    constructor(nom, diametre, facteur)
-     
+
+class Taille extends Pizza{ // Lire TP2: 7.ii  
+    constructor(nom, diametre, facteur){
+        super(this.taille)
+
+     this.nom = nom ;
+     this.diametre = diametre ; 
+     this.facteur = facteur;  // NOTE : Je ne sais pas ce que ca va donner ?!
+     this.taille = taille ;
+      
+     // Transforme la taille inscrite dans la classe pizza en un facteur dans la classe taille. 
+     if(this.taille == 'P') {
+        this.facteur = 1
+    }
+    else if (this.taille == 'M') 
+            this.facteur = 2 ;
+    else if(this.taille == 'G') 
+            this.facteur = 3 
+    else
+        console.log("erreur");
+
+    }
+    informationtaille(){
+        return this.taille;  
+    }
+    informationfacteur(){
+        return this.facteur ; // Retroune le facteur 
+    }
 
 }
 
@@ -188,10 +213,10 @@ class Taille {
 
     // pas de test pour epices 
 
-    // Test pizza  
+    // Test pizza  !!! 
         pizza1 = new Pizza ('4504', 'M', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', 50, 8); 
         console.log(pizza1);   
- 
+        console.log(pizza1.infoTaille())
     //Test de la classe commande  
 
     commande1 = new Commande (2345 ,2021-12-30 , "20:34", 'troisfromages', 40 ) ;  
@@ -204,6 +229,8 @@ class Taille {
         console.log(client1);
 
        console.log(client1.informationClient()); 
+
+        
 
     
 
