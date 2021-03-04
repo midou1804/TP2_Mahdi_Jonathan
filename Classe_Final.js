@@ -66,14 +66,14 @@ class Epices extends Aliment {
 }
 
 class Pizza {
-    constructor(numeroPizza, taille, croute, fromage, garniture,prixComplet, tempsCuisson){
+    constructor(taille,numeroPizza, croute, fromage, garniture,prixComplet, tempsCuisson){
+    this.numeroPizza = numeroPizza;
+    this.taille = taille;
+    this.croute = croute ;
+    this.fromage = fromage ;
+    this.garniture = garniture; 
     this.prixComplet = prixComplet ; 
     this.tempsCuisson = tempsCuisson ; 
-    this.numeroPizza = numeroPizza; 
-    this.taille = taille; 
-    this.croute = croute ; 
-    this.fromage = fromage ; 
-    this.garniture = garniture; 
     
     }
     informationPizza(){ 
@@ -156,31 +156,39 @@ class Client {
 }
 
 class Taille extends Pizza{ // Lire TP2: 7.ii  
-    constructor(nom, diametre, facteur){
-        super(this.taille)
-
+    constructor(taille,nom, diametre,facteur){
+        super(taille) ; //La classe ne veut pas aller chercher la taille de la pizza 
      this.nom = nom ;
-     this.diametre = diametre ; 
-     this.facteur = facteur;  // NOTE : Je ne sais pas ce que ca va donner ?!
-     this.taille = taille ;
+     this.diametre = diametre ;
+     this.facteur = facteur ; 
       
+    }
+     
+    // NOTE : Je ne sais pas ce que ca va donner ?!
+     
+      
+     
      // Transforme la taille inscrite dans la classe pizza en un facteur dans la classe taille. 
+    getFacteur(){  
      if(this.taille == 'P') {
         this.facteur = 1
     }
     else if (this.taille == 'M') 
-            this.facteur = 2 ;
+            this.facteur = 2 
     else if(this.taille == 'G') 
-            this.facteur = 3 
+            this.facteur = 3
     else
         console.log("erreur");
-
+        
+      return this.facteur;   
     }
-    informationtaille(){
+     
+    
+    informationTailleClass(){
         return this.taille;  
     }
-    informationfacteur(){
-        return this.facteur ; // Retroune le facteur 
+    informationFacteur(){
+        return this.facteur ; // Retourne le facteur 
     }
 
 }
@@ -214,7 +222,7 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
     // pas de test pour epices 
 
     // Test pizza  !!! 
-        pizza1 = new Pizza ('4504', 'M', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', 50, 8); 
+        pizza1 = new Pizza (4504 , 'M', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', 50, 8); 
         console.log(pizza1);   
         console.log(pizza1.infoTaille())
     //Test de la classe commande  
@@ -229,6 +237,14 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
         console.log(client1);
 
        console.log(client1.informationClient()); 
+       
+    //Test de la classe taille 
+       taille3 = new Taille ('p','Petite', 12) ;
+       console.log(taille3)  ;
+        console.log(taille3.informationTailleClass());
+        console.log(taille3.getFacteur()); // Le test fonctionne . Peut etre faire fonctionner aec min et maj ? 
+
+
 
         
 
