@@ -168,27 +168,24 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
      
       
      
-     // Transforme la taille inscrite dans la classe pizza en un facteur dans la classe taille. 
+     // Transforme la taille inscrite dans la classe pizza en un facteur dans la classe taille.  ++ Correction probléme de MAJ 
     getFacteur(){  
-     if(this.taille == 'P') {
-        this.facteur = 1
-    }
-    else if (this.taille == 'M') 
-            this.facteur = 2 
-    else if(this.taille == 'G') 
-            this.facteur = 3
-    else
+     if((this.taille).toUpperCase() == "P") {
+        this.facteur = 1;
+   } else if (this.taille.toUpperCase() == "M") {
+            this.facteur = 2 ;
+   } else if(this.taille.toUpperCase() == "G") {
+            this.facteur = 3;
+   } else {
         console.log("erreur");
-        
-      return this.facteur;   
+    }    
+    
+   return this.facteur;   
     }
      
     
     informationTailleClass(){
         return this.taille;  
-    }
-    informationFacteur(){
-        return this.facteur ; // Retourne le facteur 
     }
 
 }
@@ -198,7 +195,7 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
     console.log(Aliment1);
 
     //Tester classe Croute 
-    croute1 = new Croute ('brule' ,60 ,'calcine', 1020, 'G') ;
+    croute1 = new Croute ('brule' ,60 ,'calcine', 1020, 'M') ;
     console.log(croute1); 
     
     console.log(croute1.prixCroute());  
@@ -222,7 +219,7 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
     // pas de test pour epices 
 
     // Test pizza  !!! 
-        pizza1 = new Pizza (4504 , 'M', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', 50, 8); 
+        pizza1 = new Pizza (4504 , 'G', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', 50, 8); 
         console.log(pizza1);   
         console.log(pizza1.infoTaille())
     //Test de la classe commande  
@@ -239,10 +236,10 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
        console.log(client1.informationClient()); 
        
     //Test de la classe taille 
-       taille3 = new Taille ('p','Petite', 12) ;
+       taille3 = new Taille ('g','Petite', 12) ;
        console.log(taille3)  ;
         console.log(taille3.informationTailleClass());
-        console.log(taille3.getFacteur()); // Le test fonctionne . Peut etre faire fonctionner aec min et maj ? 
+        console.log(taille3.getFacteur()); // Le test fonctionne . miniscule et MAJ combinés .  
 
 
 
