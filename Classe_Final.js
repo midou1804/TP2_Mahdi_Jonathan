@@ -147,6 +147,10 @@ class Commande{
     informationTpsTvq(){
         return this.tps + ", " + this.tvq ; 
     }
+    claculPrixComplet(){
+        var nouveauPrixComplet = ((this.tps + this.tvq ) * this.prixComplet ) ;
+        return nouveauPrixComplet ;
+    }
 }
 
 class Client {
@@ -231,11 +235,12 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
         console.log(pizza1.infoTaille())
     //Test de la classe commande  
 
-    commande1 = new Commande (2345 ,2021-12-30 , "20:34", 'troisfromages', 40, ) ;  
+    commande1 = new Commande (2345 ,2021-12-30 , "20:34", 'troisfromages', 40, 0.05, 0.09975 ) ;  
     console.log(commande1); 
     console.log(commande1.informationTpsTvq()); 
-
+    console.log(commande1.prixComplet)
     console.log(commande1.informationCommande()) ;
+    console.log(commande1.claculPrixComplet());
     
     //Test de la classe client  
         client1 = new Client ('Mahdi' , 'Hmissi', '3502504567', 'ghth@.com') ; 
