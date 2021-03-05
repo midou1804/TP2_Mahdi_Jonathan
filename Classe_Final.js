@@ -128,17 +128,24 @@ class Pizza {
 }
 
 class Commande{ 
-    constructor(numCommande, dateCommande, heureCommande,listepizzas ,prixComplet){
+        tps = 0.05 ;
+        tvq = 0.09975 ; 
+    constructor(numCommande, dateCommande, heureCommande,listepizzas, prixComplet,tps, tvq){
         
         this.numCommande = numCommande ; 
         this.dateCommande = dateCommande ; 
         this.heureCommande = heureCommande ; 
         this.listepizzas = listepizzas; // NOTE !! : Liste à créer !! 
-        this.prixComplet = prixComplet; 
+        this.prixComplet = prixComplet;
+        this.tps = tps = tps// A t-on besoin du "this." pour déclarer des valeurs par défaut ???  
+        this.tvq = tvq ; 
     
     }
     informationCommande(){
         return this.numCommande + ", " + this.dateCommande + ", " + this.heureCommande + ", " + this.listepizzas+ ", " + this.prixComplet; 
+    }
+    informationTpsTvq(){
+        return this.tps + ", " + this.tvq ; 
     }
 }
 
@@ -219,13 +226,14 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
     // pas de test pour epices 
 
     // Test pizza  !!! 
-        pizza1 = new Pizza (4504 , 'G', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', 50, 8); 
+        pizza1 = new Pizza (4504 , 'G', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', (50*(this.tps+this.tvq)), 8); 
         console.log(pizza1);   
         console.log(pizza1.infoTaille())
     //Test de la classe commande  
 
-    commande1 = new Commande (2345 ,2021-12-30 , "20:34", 'troisfromages', 40 ) ;  
+    commande1 = new Commande (2345 ,2021-12-30 , "20:34", 'troisfromages', 40, ) ;  
     console.log(commande1); 
+    console.log(commande1.informationTpsTvq()); 
 
     console.log(commande1.informationCommande()) ;
     
@@ -240,7 +248,6 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
        console.log(taille3)  ;
         console.log(taille3.informationTailleClass());
         console.log(taille3.getFacteur()); // Le test fonctionne . miniscule et MAJ combinés .  
-
 
 
         
