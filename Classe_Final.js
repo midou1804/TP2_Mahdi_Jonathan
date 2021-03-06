@@ -139,13 +139,14 @@ class Pizza {
 }
 
 class Commande{ 
-    constructor(numCommande, dateCommande, heureCommande,listepizzas ,prixComplet){
+    constructor(numCommande, dateCommande, heureCommande,listepizzas ,prixComplet, client){
         
         this.numCommande = numCommande ; 
         this.dateCommande = dateCommande ; 
         this.heureCommande = heureCommande ; 
         this.listepizzas = listepizzas; // NOTE !! : Liste à créer !! 
         this.prixComplet = prixComplet; 
+        this.client = client ; 
     
     }
     informationCommande(){
