@@ -223,7 +223,7 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
         console.log(pizza1);   
         console.log(pizza1.infoTaille())
     //Test de la classe commande  
-
+ 
     commande1 = new Commande (2345 ,2021-12-30 , "20:34", 'troisfromages', 40 ) ;  
     console.log(commande1); 
 
