@@ -139,13 +139,14 @@ class Pizza {
 }
 
 class Commande{ 
-    constructor(numCommande, dateCommande, heureCommande,listepizzas ,prixComplet){
+    constructor(numCommande, dateCommande, heureCommande,listepizzas ,prixComplet, client){
         
         this.numCommande = numCommande ; 
         this.dateCommande = dateCommande ; 
         this.heureCommande = heureCommande ; 
         this.listepizzas = listepizzas; // NOTE !! : Liste à créer !! 
         this.prixComplet = prixComplet; 
+        this.client = client ; 
     
     }
     informationCommande(){
@@ -154,12 +155,11 @@ class Commande{
 }
 
 class Client {
-    constructor(nom, prenom, numTel, adresseCourriel, commande){
+    constructor(nom, prenom, numTel, adresseCourriel){
         this.nom= nom ; 
         this.prenom = prenom; 
         this.numTel = numTel; 
-        this.adresseCourriel = adresseCourriel;  
-        this.commande = commande ; 
+        this.adresseCourriel = adresseCourriel;   
         
     }
     informationClient(){
@@ -199,19 +199,19 @@ class Client {
         pizza1 = new Pizza ('4504', 'M', 'Mince', 'suisse, mozerella et cheddar', 'tomate, peperroni et olives', 50, 8); 
         console.log(pizza1);   
  
-    //Test de la classe commande  
-
-    commande1 = new Commande (2345 ,2021-12-30 , "20:34", 'troisfromages', 40 ) ;  
-    console.log(commande1); 
-
-    console.log(commande1.informationCommande()) ;
     
     //Test de la classe client  
         client1 = new Client ('Mahdi' , 'Hmissi', '3502504567', 'ghth@.com') ; 
         console.log(client1);
 
        //console.log(client1.informationClient()); 
+//Test de la classe commande  
 
+    commande1 = new Commande (2345 ,2021-12-30 , "20:34", 'troisfromages', 40, client1 ) ;  
+    console.log(commande1); 
+
+    console.log(commande1.informationCommande()) ;
+    
 
        // Test tableau (calcul des prix)
        /*
