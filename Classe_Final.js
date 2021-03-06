@@ -265,6 +265,9 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
         console.log(taille3.informationTailleClass());
         console.log(taille3.getFacteur()); // Le test fonctionne . miniscule et MAJ combinés .  
 
+        //Test
+        
+
 
         
 
