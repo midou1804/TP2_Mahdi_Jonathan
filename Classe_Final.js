@@ -268,7 +268,7 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
 
         
 
-    console.log(pizza2.calculPrix);
+    
     
     
 
