@@ -120,10 +120,21 @@ class Pizza {
         this.fromages(this.fromages.length) = fromage; 
     }
 
-    //for (let index = 0; index < fromage.lengtfromagedex++) {
-      //  fromage element = array[index];
-    //    fromage
 
+    calculPrix(){ // VRAI Changements !! 
+        var totalPrixGarniture = 0;
+        for (let i = 0; i < this.garnitures.length; i++) {
+            totalPrixGarniture += this.garnitures[i].prixGarniture; 
+        }
+
+        var totalPrixFromage = 0;
+        for (let i = 0; i < this.fromage.length; i++) {
+            totalPrixFromage += this.fromage[i].prixFromage; 
+        }
+
+         Pizza.prixComplet = (totalPrixFromage + totalPrixGarniture + Croute.prix) * Pizza.taille ;
+         console.log(Pizza.prixComplet);
+    }
 
 }
 
@@ -200,6 +211,21 @@ class Client {
 
        //console.log(client1.informationClient()); 
 
+
+       // Test tableau (calcul des prix)
+       /*
+    var peproni = new Garniture('peperoni', 5, 15);
+    var champignons = new Garniture('champignon', 5, 20);
+    var poivron = new Garniture('poivron', 5, 30);
+
+    var mozzarela = new Fromage('mozzarela', 5, 15)
+
+    var pizza2 = new Pizza(3, 'M', 'mince', [mozzarela], [peproni, champignons, poivron], 25, 10);
+
+    console.log(pizza2);
+
+    console.log(pizza2.calculPrix);
+    */ 
     
 
 
