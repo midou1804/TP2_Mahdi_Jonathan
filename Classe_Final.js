@@ -154,12 +154,11 @@ class Commande{
 }
 
 class Client {
-    constructor(nom, prenom, numTel, adresseCourriel, commande){
+    constructor(nom, prenom, numTel, adresseCourriel){
         this.nom= nom ; 
         this.prenom = prenom; 
         this.numTel = numTel; 
-        this.adresseCourriel = adresseCourriel;  
-        this.commande = commande ; 
+        this.adresseCourriel = adresseCourriel;   
         
     }
     informationClient(){
