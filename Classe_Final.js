@@ -121,7 +121,7 @@ class Pizza {
     }
 
 
-    calculPrix(){ // VRAI Changements !! 
+    calculPrix(){  
         var totalPrixGarniture = 0;
         for (let i = 0; i < this.garnitures.length; i++) {
             totalPrixGarniture += this.garnitures[i].prixGarniture; 
@@ -133,7 +133,7 @@ class Pizza {
         }
 
          Pizza.prixComplet = (totalPrixFromage + totalPrixGarniture + Croute.prix) * Pizza.taille ;
-         console.log(Pizza.prixComplet);
+         return this.prixComplet;
     }
 
 }
@@ -211,7 +211,7 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
     }
 
 }
-
+    /*
     // Code pour tester la classe Aliment : 
     Aliment1 = new Aliment ('Aliment1' ,'45') ; 
     console.log(Aliment1);
@@ -265,7 +265,20 @@ class Taille extends Pizza{ // Lire TP2: 7.ii
         console.log(taille3.informationTailleClass());
         console.log(taille3.getFacteur()); // Le test fonctionne . miniscule et MAJ combinés .  
 
-        //Test
+    //test tableau
+    
+    var peproni = new Garniture('peperoni', 5, 15);
+    var champignons = new Garniture('champignon', 5, 20);
+    var poivron = new Garniture('poivron', 5, 30);
+
+    var mozzarela = new Fromage('mozzarela', 5, 15)
+
+    var pizza2 = new Pizza(3, 2, 2, [mozzarela], [peproni, champignons, poivron], 25, 10);
+
+    console.log(pizza2);
+    //pizza2.calculPrix();
+    console.log(pizza2.calculPrix());    
+    */
         
 
 
